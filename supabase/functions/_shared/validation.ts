@@ -1,4 +1,4 @@
-import { z } from "https://deno.land/x/zod@v3.22.4/mod.ts";
+import { z } from "https://esm.sh/zod@3.22.4";
 
 // Common validation schemas
 export const UuidSchema = z.string().uuid("Invalid UUID format");

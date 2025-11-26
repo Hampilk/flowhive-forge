@@ -9,7 +9,6 @@ import AppRoutes from "@/components/AppRoutes";
 import ErrorBoundary from "@/components/ErrorBoundary";
 import logger from "@/lib/logger";
 import { captureExceptionSafe } from "@/lib/sentry";
-import { env } from "@/config/env";
 
 // Configure TanStack Query with sensible defaults
 const queryClient = new QueryClient({

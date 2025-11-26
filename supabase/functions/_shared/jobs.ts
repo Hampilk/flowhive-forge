@@ -1,4 +1,4 @@
-import parser from "npm:cron-parser@4.9.0";
+import parser from "https://esm.sh/cron-parser@4.9.0";
 import type { SupabaseClient } from "https://esm.sh/@supabase/supabase-js@2.39.3";
 
 type GenericSupabaseClient = SupabaseClient<Record<string, unknown>>;

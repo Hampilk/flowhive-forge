@@ -3,12 +3,12 @@ import type { SupabaseClient } from "https://esm.sh/@supabase/supabase-js@2.39.3
 import { corsHeaders, validateRequest } from "../_shared/validation.ts";
 import {
   protectEndpoint,
-  requireUser,
+  requireAuthenticatedUser,
   createAuthErrorResponse,
   logAuditAction,
   handleCorsPreflight
 } from "../_shared/auth.ts";
-import { z } from "https://deno.land/x/zod@v3.22.4/mod.ts";
+import { z } from "https://esm.sh/zod@3.22.4";
 
 // Validation schema for AI chat requests
 const AIChatRequestSchema = z.object({
@@ -283,7 +283,7 @@ serve(async (req) => {
     // Authenticate request (optional for chat, but good for analytics)
     const authResult = await protectEndpoint(
       req.headers.get('Authorization'),
-      requireUser
+      requireAuthenticatedUser
     );
 
     if ('error' in authResult) {
